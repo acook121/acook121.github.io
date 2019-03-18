@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Intro to FeatureLayer - 4.10</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.10/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer"
+      ],
+      function(
+        Map, MapView,
+        FeatureLayer
+      ) {
+
+        var map = new Map({
+          basemap: "hybrid"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+
+          extent: { // autocasts as new Extent()
+            xmin: -13168331.107262,
+            ymin: 3558203.05233679,
+            xmax: -10149955.1451312,
+            ymax: 4036206.86386086,
+            spatialReference: 102100
+          }
+        });
+
+        /********************
+         * Add feature layer
+         ********************/
+
+        // Carbon storage of trees in Warren Wilson College.
+        var featureLayer = new FeatureLayer({
+          url: "https://services9.arcgis.com/SDQDNhpG8jikA0D1/arcgis/rest/services/311_Incidents_anna_m/FeatureServer/0?token=xVHCkGPQPm47DNFEvNCA8Q4LwbiCQpXhKq4MKJ9mqglrUa0-ZeqMGA5_KzxPBys--3xUjYDjRZBM-nCxSsSh27L0z_TWxWP4kXbK1_QxmfidaUqy05D79bXqbKda9VDV8sZgStDFX16QC-dBQAGMjA-iTIQT-zFs3-Zwp5bwGnjBoIIN6U23vwyMLwx_pAvEyWls5TB905uI-zy90R5qlLxopCUWaHy3o9NR3YVZU_G7Ksg1DNlJ-npkZb88iw1x"
+        });
+
+        map.add(featureLayer);
+
+      });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
