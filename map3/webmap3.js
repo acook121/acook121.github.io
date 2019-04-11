@@ -1,5 +1,5 @@
 let statemap = L.map('mapthree').setView([38, -97], 4)
-let basemapUrl = ('https:{s}.tile.opentopomap.org/{z}/{x}/{y}.png')
+let basemapUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
 L.tileLayer(basemapUrl).addTo(statemap)
 let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_demographics_ESRI_2010A.geojson'
 jQuery.getJSON(stateDemographicsUrl, function (data) {
