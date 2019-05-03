@@ -15,3 +15,8 @@
   font-weight: bold;
   font-style: italic;
 }
+.quiet-style {
+  color: black;
+  text-align: center;
+  font-size: 100%
+}
