@@ -1,7 +1,7 @@
 #mapF {
   height: 550px;
   width: 800px;
-  position: absolute; top:0; bottom:0; right:0; left:0;
+  position: center; top:0; bottom:0; right:0; left:0;
 }
 .anna-style {
   color: purple;
